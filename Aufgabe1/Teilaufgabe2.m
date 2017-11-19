@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                  Aufgabe 1, Teilaufgabe 1: Sinusgemisch                 %
+%                  Aufgabe 1, Teilaufgabe 2: Sinusgemisch                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear all;
 clc;
@@ -24,19 +24,14 @@ sampleRate   = 16000;           % Abtastrate (16kHz)
 samplePeriod = 1/sampleRate;    % Abtastperiode (0.0000625s) 
 timeInSec    = 5;               % time
 
-%--------------------------------------------------------------------------
-% Den Pfad ermitteln, um dort die Grafiken und Sound abzuspeichern: 
-currentfolder = pwd;
-outputfile = strcat(currentfolder, '/sinusgemisch.wav');
-
 % length of signal (5s) 
 time = (0:samplePeriod:timeInSec-samplePeriod);
 timeInMs=time.*1000;
 
 % Errechnenvon Sinusschwingungen
-signal1 = calculateFR(1, 100, 0, time);
-signal2 = calculateFR(0.5, 200, -pi/2, time);
-signal3 = calculateFR(0.5, 400, pi, time);
+signal1 = A1 * sin(2 * pi * f1 * time + phi1);
+signal2 = A2 * sin(2 * pi * f2 * time + phi2);
+signal3 = A3 * sin(2 * pi * f3 * time + phi3);
 
 
 % mix sine vibrations and scale sinemix
@@ -53,7 +48,7 @@ for i = 1:numel(framelength_list)
     fourier_sinemix = fft(sinusgemisch, frame_length);
     delta_f = sampleRate/frame_length;
     f=(0:delta_f:sampleRate-delta_f);
-    
+        
     subplot(5,1,i);
     plot(f, abs(fourier_sinemix));
     current_title = strcat('frame length= ', int2str(frame_length), ', delta f= ', int2str(delta_f));

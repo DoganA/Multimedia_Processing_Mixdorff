@@ -32,12 +32,10 @@ outputfile = strcat(currentfolder, '/sinusgemisch.wav');
 % length of signal (5s) 
 time = (0:samplePeriod:timeInSec-samplePeriod);
 
-
 % Errechnenvon Sinusschwingungen
-signal1 = calculateFR(1, 100, 0, time);
-signal2 = calculateFR(0.5, 200, -pi/2, time);
-signal3 = calculateFR(0.5, 400, pi, time);
-
+signal1 = A1 * sin(2 * pi * f1 * time + phi1);
+signal2 = A2 * sin(2 * pi * f2 * time + phi2);
+signal3 = A3 * sin(2 * pi * f3 * time + phi3);
 
 % mix sine vibrations and scale sinemix
 sinusgemisch = signal1 + signal2 + signal3;
@@ -47,9 +45,11 @@ sinusgemisch = sinusgemisch/max(abs(sinusgemisch));
 % Eingangssignale Plotten und als Grafik abschpeichern
 timeInMs = time.*1000;
 
+
 hFig = figure(1);
 set(hFig, 'Position', [0 0 500 500])
 plot(timeInMs, signal1, timeInMs, signal2, timeInMs, signal3),axis([0 20 -2 2]);
+grid on
 title('Eingangssignale');
 xlabel('t[ms]');
 ylabel('A(t)');
@@ -63,6 +63,8 @@ hFig = figure(2);
 %set(hFig, 'Position', [0 0 500 500])
 % plotting sinemix
 plot(time, sinusgemisch);
+grid on
+title('Sinusgemisch');
 axis([0 0.02 -1 1]);
 xlabel('t[ms]'); 
 ylabel('x[t]');

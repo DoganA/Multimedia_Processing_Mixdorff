@@ -1,0 +1,327 @@
+<!doctype html charset="utf-8">
+<html>
+	<head>
+        <meta charset="utf-8">
+		<title>Multimedia Processing Wintersemester 2017/2018</title>
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../css/main.css" />
+        <script src="../js/jquery-2.1.4.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+	</head>
+	<body>
+
+		
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./index.html">Multimedia Processing</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Übung 1</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+		<div class="row container">
+            <p class="lead">
+                <em>Lösungen von Dogan Alkan, unter Mitwirkung von Kuldeep Singh Rawat und Ramazan Kalaslioglu erstellt</em>
+            </p>
+        </div>
+		<!-- 1. Teilaufgabe -->
+		<div id="accordion" class="container panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne"
+                           href="#collapseOne">
+                            Teilaufgabe 1
+                        </a>
+                    </h3>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <h4><u>Aufgabenbeschreibung:</u></h4>
+                        <p>
+                            In dieser Übung geht es um die Fouriersynthese und -analyse. Erzeuge mit Matlab ein Sinusgemisch mit den
+							folgenden Eigenschaften (f: Frequenz, A: Amplitude, phi Phasenwinkel):
+                        </p>
+                        <ul>
+                            <li>f1=100Hz A1=1 phi1=0</li>
+                            <li>f2=200Hz A2=0,5 phi2=-pi/2</li>
+                            <li>f3=400Hz A3=0,5 phi3=pi</li>
+                        </ul>
+                        <p>
+                           und einer Dauer von 5 s. Zeichne das Sinusgemisch mit plot im Bereich t=0-20ms. Dabei soll auf der x-Achse
+						   die Zeit in ms abgetragen sein. Gibt die Schwingung als Wave-Datei mit wavwrite aus, und zwar mit einer
+						   Abtastfrequenz von 16kHz und einer Auflösung von 16bit. Dabei skalieren, um Clipping zu vermeiden.
+                        </p>
+                        <!-- content -->
+                        <h4><u>Aufgabenlösung:</u></h4>
+                        <div class="row">
+                            <figure class="col-md-6">
+                                <pre data-embed="Teilaufgabe1.m"></pre>
+                                <figcaption>Datei:
+                                    <a href="Teilaufgabe1.m" target="_blank">Teilaufgabe1.m</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="row">
+                            <figure class="col-md-12">
+                                <audio controls>
+                                    <source src="matlab/ex1/sine.wav" type="audio/wav">
+                                </audio>
+                                <figcaption>
+                                    Aufnahme des Sinusgemisch
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="row">
+                            <figure class="col-md-12">
+                                <img src="plot_1_1_eingangssignale.jpg" alt="" />
+                                <figcaption>
+                                    Plot der Eingangssignale
+                                </figcaption>
+                            </figure>
+                            <figure class="col-md-12">
+                                <img src="plot_1_1_sinusgemisch.jpg" alt="" />
+                                <figcaption>
+                                    Plot des Sinusgemisches
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			<!-- 2. Teilaufgabe -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo"
+                           href="#collapseTwo">
+                            Teilaufgabe 2
+                        </a>
+                    </h3>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <h4><u>Aufgabenbeschreibung:</u></h4>
+                        <p>
+                            Berechne die Fouriertransformation der Sinusschwingung mit fft und stelle das ermittelte Amplitudenspektrum mit plot dar. Variiere dabei die Framelänge zwischen 50ms, 100ms, 500ms, 1 s und 5 s. Welche Frequenzauflösung delta f erhältst du für die verschiedenen
+                            Framelängen?
+                        </p>
+                        <p>
+                            Auf der x-Achse soll dabei die Frequenz in Hertz abgetragen werden! Was fällt beim Spektrum bei der Variation der Framelänge auf? Wie kann man sich diesen Unterschied erklären?
+                        </p>
+                        <!-- content -->
+                        <h4><u>Aufgabenlösung:</u></h4>
+                        <div class="row">
+                            <figure class="col-md-6">
+                                <pre data-embed="Teilaufgabe2.m"></pre>
+                                <figcaption>Datei:
+                                    <a href="Teilaufgabe2.m" target="_blank">Teilaufgabe2.m</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="row">
+                            <figure class="col-md-12">
+                                <img src="plot_12.jpg" alt="" />
+                                <figcaption>
+                                    Plot der Fouriertransformationen
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="row">
+                            <p>
+                                Die <i>Frequenzauflösung (delta f)</i> für die jeweiligen Framelängen sind aus der Grafik <b>Plot der Fouriertransformationen</b>, aus dem Titel
+								des jeweiligen Subplots, der entsprechenden Framelänge,zu entnehmen.
+                                <br> So ergeben sich für die verschiedenen Framelängen folgende Werte für die <i>delta f</i> :
+                            </p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Framelänge</th>
+                                        <th>Frequenzauflösung (delta f)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>50ms</td>
+                                        <td>320</td>
+                                    </tr>
+                                    <tr>
+                                        <td>100ms</td>
+                                        <td>160</td>
+                                    </tr>
+                                    <tr>
+                                        <td>500ms</td>
+                                        <td>32</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1000ms</td>
+                                        <td>16</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5000ms</td>
+                                        <td>3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>
+                                Das Delta (delta f) zwischen der Abtastrate und der Framelänge nimmt bei zunehmender Framelänge ab.<br> 
+                                Somit hat die Framelänge direkten Einfluss auf die Frequenzauflösung.<br>
+                                Im Vergleich des Subplots, mit einer Framelänge von 5 Sekunden, wirkt der Subplot mit 50 Millisekunden beinahe schemenhaft.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			<!-- 3. Teilaufgabe -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree"
+                           href="#collapseThree">
+                            Teilaufgabe 3
+                        </a>
+                    </h3>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse in">
+                    <div class="panel-body">
+						<h4><u>Aufgabenbeschreibung:</u></h4>
+                        <p>
+                            Nimm nun in Praat den Vokal ‚a‘ und den Vokal ‚i‘ mit 16kHz mono auf, und zwar für jedes Gruppenmitglied. Lies die Datei mit wavread in deinem Matlab-Programm ein. Berechne auch von diesem Signal die Fouriertransformation, diesmal mit Framebreiten von
+                            50ms, 100ms, 500ms, 1 s. Wie unterscheiden sich die Vokale in ihrem Spektrum vom Sinusgemisch und wie unterscheiden sie sich voneinander?
+                        </p>
+                        <!-- content -->
+						<h4><u>Aufgabenlösung:</u></h4>
+                        <div class="row">
+							<!-- Dogan -->
+                            <figure class="col-md-6">
+                                <audio controls>
+                                <source src="vokale/dalkan_a.wav" type="audio/wav">
+                            </audio>
+                                <figcaption>
+                                    Vokal 'a' von Dogan
+                                </figcaption>
+                            </figure>
+                            <figure class="col-md-6">
+                                <audio controls>
+                                <source src="vokale/dalkan_i.wav" type="audio/wav">
+                            </audio>
+                                <figcaption>
+                                    Vokal 'i' von Dogan
+                                </figcaption>
+                            </figure>
+                        </div>
+						<!-- Kuldeep -->
+                        <div class="row">
+                            <figure class="col-md-6">
+                                <audio controls>
+                                <source src="vokale/krawat_a.wav" type="audio/wav">
+                            </audio>
+                                <figcaption>
+                                    Vokal 'a' von Kuldeep
+                                </figcaption>
+                            </figure>
+                            <figure class="col-md-6">
+                                <audio controls>
+                                <source src="vokale/krawat_i.wav" type="audio/wav">
+                            </audio>
+                                <figcaption>
+                                    Vokal 'i' von Kuldeep
+                                </figcaption>
+                            </figure>
+                        </div>
+						<!-- Ramazan -->
+						<div class="row">
+                            <figure class="col-md-6">
+                                <audio controls>
+                                <source src="vokale/rkalaslioglu_a.wav" type="audio/wav">
+                            </audio>
+                                <figcaption>
+                                    Vokal 'a' von Ramazan
+                                </figcaption>
+                            </figure>
+                            <figure class="col-md-6">
+                                <audio controls>
+                                <source src="vokale/rkalaslioglu_i.wav" type="audio/wav">
+                            </audio>
+                                <figcaption>
+                                    Vokal 'i' von Ramazan
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="row">
+                            <figure class="col-md-12">
+                                <pre data-embed="vokale/Teilaufgabe3.m"></pre>
+                                <figcaption>Datei:
+                                    <a href="vokale/Teilaufgabe3.m" target="_blank">Teilaufgabe3.m</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="row">
+                            <h5><u>Unterschied zum Sinusgemisch</u></h5>
+                            <p>
+                                Vorab kann festgehalten werden, dass die gesprochenen Vokale, im Gegensatz zum erzeugten Sinusgemisch, höchstwahrscheinlich Störgeräusche enthalten. Die gesprochenen Vokale enthalten allgemein
+								gesagt mehr Frequenzen, als das Sinusgemisch. Eine leichte Ähnlichkeit zwischen den Vokalen und dem Sinusgemisch ist vorhanden.
+                            </p>
+                            <h5><u>Unterschied der Vokale untereinander</u></h5>
+                            <p>
+                                Die beiden Vokale 'a' und 'i' enthalten eine unterschiedliche Anzahl von Frequenzen. Auf der einen Seite hat das 'i' eine ähnliche Grundfrequenz, wie das 'a', auf der anderen Seite besitzt das 'i'
+								jedoch eine höhere Amplitude. Generell kann die Aussage getroffen werden, dass das 'a' deutlich mehr Frequenzen enthält.
+                            </p>
+                        </div>
+                        <div class="row">
+                            <h5 class="text-center">Plot der Aufnahmen des Vokals 'a'</h5>
+                            <figure class="col-md-6">
+                                <img src="vokale/plot_13_dalkan_a.jpg" alt="" />
+                                <figcaption>
+                                    Dogan Alkan
+                                </figcaption>
+                            </figure>
+                            <figure class="col-md-6">
+                                <img src="vokale/plot_13_krawat_a.jpg" alt="" />
+                                <figcaption>
+                                    Kuldeep Singh Rawat
+                                </figcaption>
+                            </figure>
+							
+                            <figure class="col-md-6">
+                                <img src="vokale/plot_13_rkalaslioglu_a.jpg" alt="" />
+                                <figcaption>
+                                    Ramazan Kalaslioglu 
+                                </figcaption>
+                            </figure>
+                        </div>
+						
+                        <div class="row">
+                            <h5 class="text-center">Plot der Aufnahmen des Vokals 'i'</h5>
+                            <figure class="col-md-6">
+                                <img src="vokale/plot_13_dalkan_i.jpg" alt="" />
+                                <figcaption>
+                                    Dogan Alkan
+                                </figcaption>
+                            </figure>
+                            <figure class="col-md-6">
+                                <img src="vokale/plot_13_krawat_i.jpg" alt="" />
+                                <figcaption>
+                                    Kuldeep Singh Rawat
+                                </figcaption>
+                            </figure>
+                            <figure class="col-md-6">
+                                <img src="vokale/plot_13_rkalaslioglu_i.jpg" alt="" />
+                                <figcaption>
+                                    Ramazan Kalaslioglu 
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="js/app.js"></script>
+            
+	</body>
+</html>
