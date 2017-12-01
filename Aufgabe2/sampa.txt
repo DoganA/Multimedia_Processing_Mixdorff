@@ -1,0 +1,63 @@
+
+SAMPA&#9;EXAMPLES (orthographic)
+_&#9;(silence, no signal)
+p&#9;Pier, aB
+b&#9;Bier, KraBBe
+t&#9;Tier, GraD
+d&#9;Dir, eDel
+k&#9;Kasse, taG
+g&#9;Gasse, eGal
+f&#9;Vogel, schlaF
+v&#9;Wasser, eVentuell
+s&#9;aSt, haSS
+z&#9;Sieb, beSen
+S&#9;Sp&auml;t, aSCHe
+Z&#9;Genie, DSCHungel
+x&#9;naCH, doCH
+C&#9;diCH, honiG
+h&#9;Hut, aHorn
+
+pf&#9;PFerd, toPF
+ts&#9;Zwei, plaTZ
+tS&#9;kuTSCHe, Cello
+m&#9;Mut, haMMer
+n&#9;Nase, kaNNe
+N&#9;eNG, baNGe
+
+l&#9;Liebe, haLLe
+R&#9;Riese, kRaut
+6&#9;opER, deR
+j&#9;Jetzt, Jagd
+
+aI&#9;EIns, kAIser
+OY&#9;&Auml;U&szlig;erung, nEU
+aU&#9;AUf, schAU
+
+@&#9;sehEn, bEsagt
+i:&#9;Igel, bIEten
+I&#9;In, bItten
+y:&#9;&Uuml;bung, h&Uuml;ten
+Y&#9;Ypsilon, h&Uuml;tten
+e:&#9;bEten, schnEE
+E&#9;bEtten, g&Auml;ste
+E:&#9;&Auml;sen, gebl&Auml;se
+2:&#9;&Ouml;fen, m&Ouml;gen
+9&#9;&Ouml;ffnen, k&Ouml;nnen
+u:&#9;bUHlen, gUt
+U&#9;lUstig, bUtter
+o:&#9;Ofen, kOHl
+O&#9;Offen, tOpf
+a:&#9;wAr, wAHr
+a&#9;An, kAnn
+</pre>
+
+<p>Only rudimentary implemented:</p>
+
+<pre>
+E^ (= E~:)&#9;bulletIN
+a^ (= a~:)&#9;pendANT
+9^ (= 9~:)&#9;parfUM
+o^ (= o~:) &#9;feuilletON
+E~&#9;&#9;IMpair
+a~&#9;&#9;pENdant
+o~&#9;&#9;nONchalant
